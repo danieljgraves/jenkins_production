@@ -33,12 +33,8 @@ variable "role" {
   default = "web server"
 }
 
-variable "env" {
-  default = "dev"
-}
-
 variable "hostname" {
-  default = "Staging-Jenkins-Test"
+  default = "${var.env}-Jenkins-Test"
 }
 
 variable "fqdn" {

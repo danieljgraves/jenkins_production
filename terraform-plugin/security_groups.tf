@@ -1,5 +1,5 @@
 resource "aws_security_group" "web" {
-  name        = "Jenkins_Automation"
+  name        = "${var.env}_Jenkins_Automation"
   description = "Test Jenkinks hosts"
   vpc_id      = "${var.vpc_id}"
 
