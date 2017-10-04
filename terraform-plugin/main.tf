@@ -19,7 +19,9 @@ resource "aws_instance" "web" {
 	"sudo apt-get -y update",
 	"echo Installing system updates DONE!",
 	"sudo sed -i 's&/var/www/html&${var.web_dir}&' /etc/apache2/sites-available/000-default.conf",
-	"cd /var/www/ && sudo rm -rf html/ && sudo git clone ${var.git_home} && sudo chown -R www-data:www-data -R /var/www/",
+	"cd /var/www/ && sudo rm -rf html/ && sudo -Hu www-data git clone ${var.git_home} && sudo chown -R www-data:www-data -R /var/www/",
+	"sudo service apache2 reload",
+	"sudo service apache2 restart"
 	    ]
     connection {
         type = "ssh"
