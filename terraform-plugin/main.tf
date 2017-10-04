@@ -13,22 +13,14 @@ resource "aws_instance" "web" {
         PrincipalId = "AIDAJQPTTLIJNWDTZJBBQ"
   }
 
-  provisioner "file" {
-    source      = "~/deploy.php"
-    destination = "${var.web_dir}"
-    connection {
-        type = "ssh"
-        user = "ubuntu"
-        private_key = "${file("~/.ssh/deploy.pem")}"
-    }
-  }
-
   provisioner "remote-exec" {
     inline = [
+	"echo Checking for system updates...",
 	"sudo apt-get -y update",
 	"echo Installing system updates DONE!",
-	"cd ${var.web_dir} && sudo chown www-data:www-data deploy.php && sudo git remote set-url origin ${var.git_home}.git"
-    ]
+	"sudo sed -i 's&/var/www/html&${var.web_dir}&' /etc/apache2/sites-available/000-default.conf",
+	"cd /var/www/ && sudo rm -rf html/ && git clone ${var.git_home}",
+	    ]
     connection {
         type = "ssh"
         user = "ubuntu"
