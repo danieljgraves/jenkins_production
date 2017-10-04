@@ -3,17 +3,11 @@ variable "aws_region" {
   default = "us-east-2"
 }
 
-<<<<<<< HEAD
-variable "eip" {
-  default = "eipalloc-6fa6cd41"
-}
-
-=======
->>>>>>> 4353bd9bfbcb18c201672bb6e6205e3bb64fe308
 variable "availability_zones" {
   default = "us-east-2b,us-east-2c,us-east-2a"
   description = "List of availability zones, use AWS CLI to find your "
 }
+
 variable "key_name" {
   default = "deploy"
   description = "Name of AWS key pair"
