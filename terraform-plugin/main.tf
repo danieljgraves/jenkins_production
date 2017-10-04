@@ -4,7 +4,7 @@ resource "aws_instance" "web" {
   ami = "${var.ami}"
   key_name = "${var.key_name}"
   vpc_security_group_ids = ["${aws_security_group.web.id}"]
-  subnet_id = "${var.sub3}"
+  subnet_id = "${var.sub2}"
   tags {
         Name = "${var.hostname}"
         Role = "${var.role}"
