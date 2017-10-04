@@ -6,7 +6,7 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = ["${aws_security_group.web.id}"]
   subnet_id = "${var.sub1}"
   tags {
-        Name = "${var.hostname}"
+        Name = "${var.env}-${var.hostname}"
         Role = "${var.role}"
         Environment = "${var.env}"
         Owner = "Daniel.Graves@rig.net"

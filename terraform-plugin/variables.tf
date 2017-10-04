@@ -34,7 +34,7 @@ variable "role" {
 }
 
 variable "hostname" {
-  default = "${var.env}-Jenkins-Test"
+  default = "Jenkins-Test"
 }
 
 variable "fqdn" {
