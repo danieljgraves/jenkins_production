@@ -1,5 +1,9 @@
 resource "aws_security_group" "web" {
+<<<<<<< HEAD
   name        = "Staging_Jenkins_Automation"
+=======
+  name        = "Production_Jenkins_Automation"
+>>>>>>> 4353bd9bfbcb18c201672bb6e6205e3bb64fe308
   description = "Test Jenkinks hosts"
   vpc_id      = "${var.vpc_id}"
 
