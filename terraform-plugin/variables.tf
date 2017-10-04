@@ -19,7 +19,7 @@ variable "public_key_path" {
 }
 
 variable "instance_type" {
-  default = "t2.small"
+  default = "t2.micro"
   description = "AWS instance type"
 }
 
