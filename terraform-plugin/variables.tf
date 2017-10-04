@@ -46,7 +46,7 @@ variable "instance_type" {
 }
 
 variable "ami" {
-  default = "ami-2a123f4f"
+  default = "ami-accde0c9"
 }
 
 ## Tags
