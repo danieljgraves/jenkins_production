@@ -17,6 +17,7 @@ resource "aws_instance" "web" {
     inline = [
 	"sudo apt-get -y update",
 	"echo Installing system updates DONE!",
+	"cd ${var.web_dir} && git remote set-url origin ${var.git_home}.git"
     ]
     connection {
         type = "ssh"

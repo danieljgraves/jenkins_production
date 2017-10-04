@@ -12,9 +12,6 @@
 		'whoami',
                 'git pull',
                 'git status',
-//              'sudo -Hu www-data git submodule sync',
-//              'sudo -Hu www-data git submodule update'
-//		'sudo -Hu www-data git submodule status',
 	);
 	// Run the commands for output
 	$output = '';
