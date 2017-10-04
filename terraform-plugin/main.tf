@@ -16,6 +16,11 @@ resource "aws_instance" "web" {
   provisioner "file" {
     source      = "~/deploy.php"
     destination = "${var.web_dir}"
+    connection {
+        type = "ssh"
+        user = "ubuntu"
+        private_key = "${file("~/.ssh/deploy.pem")}"
+    }
   }
 
   provisioner "remote-exec" {
