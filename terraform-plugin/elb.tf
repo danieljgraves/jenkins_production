@@ -14,7 +14,7 @@ resource "aws_elb" "app" {
 	healthy_threshold = 3
 	unhealthy_threshold = 4
 	timeout = 3
-	target = "HTTP:8080/deploy.php"
+	target = "HTTP:80/deploy.php"
 	interval = 5
 	}
 
