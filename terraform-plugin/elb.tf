@@ -1,6 +1,6 @@
 resource "aws_elb" "app" {
   name = "${var.env}-app"
-  subnets = "${var.sub1}"
+  subnets = ["${var.sub1}"]
   security_groups = ["${aws_security_group.web.id}"]
 
   listener {
