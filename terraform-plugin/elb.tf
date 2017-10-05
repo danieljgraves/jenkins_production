@@ -12,9 +12,9 @@ resource "aws_elb" "app" {
 
   health_check {
 	healthy_threshold = 3
-	unhealth_threshold = 4
+	unhealthy_threshold = 4
 	timeout = 3
-	target = "HTTP:/deploy.php"
+	target = "HTTP:8080/deploy.php"
 	interval = 5
 	}
 
