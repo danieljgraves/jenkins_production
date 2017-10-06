@@ -1,4 +1,4 @@
-resource "aws_elb" "app" {
+resource "aws_elb" "app1" {
   name = "${var.env}-app"
   subnets = ["${var.sub1}"]
   security_groups = ["${aws_security_group.web.id}"]
