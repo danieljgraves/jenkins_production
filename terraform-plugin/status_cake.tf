@@ -11,6 +11,3 @@ resource "statuscake_test" "url" {
   confirmations = 2
   contact_id = 76580
 }
-
-variable "statuscake_usr" {}
-variable "statuscake_api" {}
